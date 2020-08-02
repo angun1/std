@@ -2,6 +2,7 @@ package std.inf.test.chap1;
 
 import lombok.Getter;
 import lombok.Setter;
+import std.inf.test.chap2.study.domain.Member;
 
 
 public class Study {
@@ -19,6 +20,11 @@ public class Study {
 	}
 	public StudyStatus getStatus() {
 		return this.studyStatus;
+	}
+	
+	public void setOwner(Member member) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
