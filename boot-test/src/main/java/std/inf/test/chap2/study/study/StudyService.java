@@ -1,4 +1,4 @@
-package std.inf.test.chap2.study;
+package std.inf.test.chap2.study.study;
 
 import java.util.Optional;
 

@@ -19,6 +19,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
+import std.inf.test.chap2.study.study.StudyStatus;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class) // _ 언더스코어로 생성될걸 치환
 class StudyTest {
@@ -82,12 +83,12 @@ class StudyTest {
 		// 1. 이렇게 작성할 경우 어느 하나가 앞에서 실패하면 뒤에 까지 진행하지 않음 전체를 작성하는 방법은 2번에
 		assertNotNull(study);
 		assertEquals(StudyStatus.DRAFT, study.getStatus(), () -> "시작시 상태는 DRAFT 여야 한다.");
-		assertTrue(study.getLimit() > 0, () -> " 인원수가 0 보다 커야 함 ");
+		assertTrue(study.getLimitCount() > 0, () -> " 인원수가 0 보다 커야 함 ");
 
 		// 2. assertAll 를 이용해서 전체로
 		assertAll(() -> assertNotNull(study),
 				() -> assertEquals(StudyStatus.DRAFT, study.getStatus(), () -> "시작시 상태는 DRAFT 여야 한다."),
-				() -> assertTrue(study.getLimit() > 0, () -> " 인원수가 0 보다 커야 함 "));
+				() -> assertTrue(study.getLimitCount() > 0, () -> " 인원수가 0 보다 커야 함 "));
 
 //				assertEquals(StudyStatus.DRAFT, study.getStatus(), new Supplier<String>() {
 //					@Override
